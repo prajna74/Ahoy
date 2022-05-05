@@ -1,0 +1,39 @@
+@import "./variable.scss";
+
+.link{
+    color:$primary;
+}
+.btn{
+    background-color: $primary;
+    &:hover{
+        background-color: $dark;
+    }
+}
+input ::placeholder{
+    color: black; 
+}
+#sidenav{
+    display: none;
+}
+.submit{
+   background-color: black;
+   &:hover{
+       background: $dark;
+   }
+}
+.btn-follow{
+    color:white;
+    background-color: #1e40af;
+    &::after{
+        background-color: gray;
+        color:black;
+    }
+}
+.btn-viewProfile{
+    color:white;
+    background-color: #166534;
+}
+
+.btn-search{
+    background-color: $primary;
+}

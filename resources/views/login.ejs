@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahoy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/images/AHOY!!.png">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <section class="login">
+    <div class="container mx-auto mt-16 flex justify-around">
+        <div class="w-1/2 mt-4">
+        <img src="/images/home_page3.png" alt="" class="ml-16 h-2/3 border-black border-2">
+        </div>
+        <div class="mr-16 mt-4">
+            <div class="flex">
+            <h1 class="font-bold text-3xl">WELCOME BACK!</h1>
+           </div>
+           <div class="login w-96 shadow-xl rounded mt-16 p-5">
+            <%if(messages.error){%>
+              <span class="text-sm text-red-900"><%=messages.error%></span>
+              <%}%>
+            <p class="text-l font-bold">Login to see what your friends are upto!</p>
+            <form  action="/login" method="post" class="space-y-5 mt-5">
+              <input type="email"  class="w-full h-12 border border-gray-800 rounded px-3" name="email" placeholder="Email" />
+              <div class="w-full flex items-center border border-gray-800 rounded px-3">
+                <input type="password" class="w-4/5 h-12" name="password" placeholder="Password" />
+                <span class=" rounded-md px-3 login-text">Show</span>
+              </div>
+              <div class="">
+                <a href="/" class="link font-medium  rounded-md p-2">Dont have an account ?</a>
+              </div>
+              <button class="btn text-center w-full rounded-md text-white py-3 font-medium">Login</button>
+            </form>
+          </div>
+        </div>
+    </div>
+</section>
+    <script src="/js/app.js"></script>
+</body>
+</html>

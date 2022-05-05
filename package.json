@@ -1,0 +1,33 @@
+{
+  "name": "ahoy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.2",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.0",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.43",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.50.1",
+    "sass-loader": "^12.1.0"
+  }
+}

@@ -1,0 +1,59 @@
+<section>
+    <div class="container w-full mx-auto mt-8">
+        <% for(var i=0;i<posts.length;i++){%>
+        <div class="w-1/2 mx-auto items-center mb-4">
+            <div>
+                <div class="flex">
+                    <img src="<%=posts[i].userdetails[0].profilePic!=null?"/uploads/profilePics/"+posts[i].userdetails[0].profilePic:"/images/noProfilepic.png"%>"
+                        class="w-8 h-8 rounded-full" alt="">
+                    <span class="font-bold text-xl ml-4"><%=posts[i].userdetails[0].name%></span>
+                </div>
+                <img src="/uploads/postImage/<%=posts[i].postImage%>" class="w-96 h-80 border-1  mt-4" alt="">
+            </div>
+            <div class="mt-2">
+                <span class="font-bold text-xl"><%=posts[i].userdetails[0].name%></span>
+                <span class="text-xl ml-4"><%=posts[i].caption%></span>
+            </div>
+            <div>
+                <ul class="flex mt-2">
+                    <% if(likedPosts.includes(JSON.stringify(posts[i]._id))){%>
+                    <li class="like">
+                        <img src="/images/heart-red.png" class="likeimg" alt=""></li>
+                    <%} else {%>
+                    <li class="like" data-postid=<%=JSON.stringify(posts[i]._id)%>
+                        data-likedby=<%=JSON.stringify(user.user._id)%> data-indexx=<%=i%>>
+                        <img src="/images/like.png" class="likeimg" alt=""></li>
+                    <%}%>
+                    <li class="comment ml-4" data-indexx=<%=i%> class="pl-4"><img src="/images/comment-final.png" alt=""></li>
+                </ul>
+            </div>
+            <div class="medium-modal" hidden>
+                <div>
+                    <h1 class="font-bold text-xl mt-4">Comments</h1>
+                    <%for(var k=0;k<commentUser[posts[i]._id].length;k++){%>
+                    <div class="flex items-center mt-4">
+                        <img src="<%=commentUser[posts[i]._id][k].profilepicPath?commentUser[posts[i]._id][k].profilepicPath:"/images/noProfilepic.png"%>"
+                            class="w-4 h-4 rounded-full" alt="">
+                        <span class="font-bold ml-2"><%=commentUser[posts[i]._id][k].name%></span>
+                        <span class="ml-4"><%=posts[i].postComments[k].commentContent%></span>
+                    </div>
+                    <%}%>
+                </div>
+                <div class="mt-4 border-2 rounded-full w-1/2 border-gray-800">
+                <form action="/comment" class="flex p-1" method="post">
+                    <input type="text" value="<%=posts[i]._id%>" name="postId" hidden>
+                    <input type="text" placeholder="Add comment" name="commentContent" class="focus:outline-none">
+                    <div class="items-end ml-24">
+                        <button class="text-l font-bold">Post</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <span
+                    class="text-medium mx-2 text-slate-500"><%=moment(posts[i].createdAt, "YYYYMMDD").fromNow()%></span>
+            </div>
+        </div>
+        <%}%>
+    </div>
+</section>

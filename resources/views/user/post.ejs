@@ -1,0 +1,23 @@
+<section>
+    <div class="container mx-auto items-center m-8">
+        <form action="/post" method="post" enctype="multipart/form-data">
+        <div class="block w-1/2 mx-auto">
+            <div class="flex justify-around">
+                <div class="w-1/2">
+                    <input type=file id="postPic" name="postPic" oninput="pic.src=window.URL.createObjectURL(this.files[0])"
+                        accept="image/*" hidden>
+                    <button class="text-xl font-medium link" id="postPicLink">Add picture</button>
+                    <img id="pic" class="w-40 h-40" />
+                </div>
+                <div class="w-1/2">
+                    <textarea name="caption" id="" cols="40" rows="8" class=" border-black border-1"
+                        placeholder="Write something" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="mx-auto mt-8">
+                <button  class="px-8 py-1 font-bold text-white rounded-full btn">Post</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</section>

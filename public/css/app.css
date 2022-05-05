@@ -1,0 +1,51 @@
+.link {
+  color: #064e3b;
+}
+
+.btn {
+  background-color: #064e3b;
+}
+.btn:hover {
+  background-color: #1f2937;
+}
+
+input ::-moz-placeholder {
+  color: black;
+}
+
+input :-ms-input-placeholder {
+  color: black;
+}
+
+input ::placeholder {
+  color: black;
+}
+
+#sidenav {
+  display: none;
+}
+
+.submit {
+  background-color: black;
+}
+.submit:hover {
+  background: #1f2937;
+}
+
+.btn-follow {
+  color: white;
+  background-color: #1e40af;
+}
+.btn-follow::after {
+  background-color: gray;
+  color: black;
+}
+
+.btn-viewProfile {
+  color: white;
+  background-color: #166534;
+}
+
+.btn-search {
+  background-color: #064e3b;
+}
