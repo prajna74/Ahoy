@@ -98,3 +98,17 @@ if(comments)
     })
     
 }
+
+const showBtns=document.querySelectorAll(".show");
+if(showBtns)
+{
+    showBtns.forEach((show)=>{
+        show.addEventListener("click",()=>{
+            const inputElement=document.getElementById(show.dataset.inp);
+            inputElement.type="text";
+            setTimeout(()=>{
+                inputElement.type="password"
+            },1000)
+        })
+    })
+}

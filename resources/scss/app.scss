@@ -41,3 +41,8 @@ input ::placeholder{
     display: grid;
     place-items: center;
 }
+.show{
+    &:hover{
+          cursor: pointer;
+    }
+}

@@ -2277,6 +2277,20 @@ if (comments) {
   });
 }
 
+var showBtns = document.querySelectorAll(".show");
+
+if (showBtns) {
+  showBtns.forEach(function (show) {
+    show.addEventListener("click", function () {
+      var inputElement = document.getElementById(show.dataset.inp);
+      inputElement.type = "text";
+      setTimeout(function () {
+        inputElement.type = "password";
+      }, 1000);
+    });
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/scss/app.scss":
