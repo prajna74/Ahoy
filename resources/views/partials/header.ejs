@@ -9,6 +9,7 @@
                 <a href="/newPost"><li class="p-4 font-bold text-xl"><span class="px-1 items-center text-center bg-gray  rounded-full border-1 shadow-xl mr-2">+</span><span>Create</span></li></a>
                 <a href="/home"><li class="p-4 font-bold text-xl">Home</li></a>
                 <a href="/allFriends"><li class="p-4 font-bold text-xl">Find friends</li></a>
+                
                 <li class="p-4 font-bold text-xl flex" id="profileInfo"><span><img src=<%=user.user.profilePic!=null?"/uploads/profilePics/"+user.user.profilePic:"/images/noProfilepic.png"%> class="h-8 w-8 rounded-full" alt=""></span><%=user.user.name.toUpperCase()%><span></span></li></a>
                 <div id="sidenav" class=" mt-48 shadow-md bg-white px-1 absolute ml-96">
                 <div class="relative top-0 right-0">
@@ -18,6 +19,9 @@
                       </li>
                       <li>
                         <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" href="/editProfile" data-mdb-ripple="true" data-mdb-ripple-color="dark">Edit profile</a>
+                      </li>
+                      <li>
+                        <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" href="/deleteAccount" data-mdb-ripple="true" data-mdb-ripple-color="dark">DeleteAccount</a>
                       </li>
                       <li>
                         <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out" href="/logout" data-mdb-ripple="true" data-mdb-ripple-color="dark">Logout</a>

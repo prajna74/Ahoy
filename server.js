@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express=require("express");
 const app=express();
 const ejs=require("ejs");
@@ -15,6 +16,7 @@ app.set("layout","layouts/layout.ejs");
 app.use(express.static("public"));
 app.set("layout home",false);
 app.set("layout login", false);
+app.set("layout emailotp", false);
 
 mongoose.connect("mongodb://localhost/Ahoy");
 

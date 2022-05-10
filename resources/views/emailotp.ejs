@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahoy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/images/AHOY!!.png">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+    <section class="emailotp">
+                <div class="container mt-60 ml-96 ">
+                    <h1>Hello <%=registeredUser.name%>!!<br>We have sent an email to <%=registeredUser.email%>.Please entet the OTP.</h1>
+                    <form action="/verifyotp" method="post">
+                        <input type="text" name="registeredUserid" value="<%=registeredUser._id%>" hidden>
+                    <input type="text" name="otp" placeholder="Enter otp" class="py-2 px-4">
+                    <button >submit</button>
+                </form>
+                </div>
+    </section>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>

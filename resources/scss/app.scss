@@ -37,3 +37,7 @@ input ::placeholder{
 .btn-search{
     background-color: $primary;
 }
+.centerr{
+    display: grid;
+    place-items: center;
+}

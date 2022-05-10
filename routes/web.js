@@ -29,8 +29,10 @@ function initRoutes(app)
     app.get("/login",homeController().login);
     app.post("/register",homeController().postRegister);
     app.post("/login",homeController().postLogin);
+    app.post("/verifyotp",homeController().verifyotp);
     app.get("/home",userController().home);
     app.get("/logout",homeController().logout)
+    app.get("/deleteAccount",userController().deleteAccount)
     app.get("/viewProfile/:id",userController().viewProfile);
     app.get("/editProfile",userController().editProfile);
     app.get("/allFriends",userController().allFriends);

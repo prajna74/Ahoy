@@ -49,3 +49,8 @@ input ::placeholder {
 .btn-search {
   background-color: #064e3b;
 }
+
+.centerr {
+  display: grid;
+  place-items: center;
+}

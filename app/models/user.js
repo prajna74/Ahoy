@@ -1,3 +1,4 @@
+const postSchema=require("./../models/post");
 const mongoose=require("mongoose");
 const path=require("path");
 const profilePics="uploads/profilePics";
@@ -12,7 +13,7 @@ const userSchema=mongoose.Schema({
     },
     email:{
         type:String,
-        required:true
+        index:{unique:true}
     },
     profilePic:{
          type:String
@@ -25,6 +26,7 @@ const userSchema=mongoose.Schema({
     }
 },{timestamps:true});
 
+
 userSchema.virtual("profilepicPath").get(function(){
     if(this.profilePic!=null){
     return path.join("/",profilePics,this.profilePic)
@@ -32,6 +34,11 @@ userSchema.virtual("profilepicPath").get(function(){
     else{
         return "";
     }
+});
+
+userSchema.pre("remove",function(next){
+   postSchema.deleteMany({userId:this._id}).exec();
+   next();
 });
 
 

@@ -149,6 +149,13 @@ function userController(){
           });
           const users=await Users.find({_id:{$ne:req.session.user.user._id,$in:followersList}});
           res.render("user/followers",{users:users,ufollow:ufollow});
+        },
+        deleteAccount:async(req,res)=>{
+          const userr=await Users.findById(req.session.user.user._id);
+          userr.remove();
+          req.session.user="";
+          req.session.destroy();
+          res.redirect("/");
         }
     }
   }
