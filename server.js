@@ -21,7 +21,7 @@ app.set("layout emailotp", false);
 mongoose.connect("mongodb://localhost/Ahoy");
 
 app.use(session({
-       secret:"heyy",
+       secret:SECRET_KEY,
        resave:false,
        saveUninitialized:false,
        store:mongoStore.create({
